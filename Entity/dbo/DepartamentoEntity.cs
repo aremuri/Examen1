@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class EN
+    public class DepartamentoEntity : EN
     {
-        public bool Estado { get; set; } /*bool porque en sql es declarado como BIT*/
+        public int? Id_Departamento { get; set; }
 
-        public string Descripcion { get; set; }
+        public string Ubicacion { get; set; }
     }
 }
