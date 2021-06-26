@@ -64,5 +64,9 @@
     <Build Include="dbo\Tables\Titulos.sql" />
     <Build Include="dbo\Tables\Puestos.sql" />
     <Build Include="dbo\Tables\Departamentos.sql" />
+    <Build Include="dbo\StoredProcedures\DepartamentoObtener.sql" />
+    <Build Include="dbo\StoredProcedures\DepartamentoActualizar.sql" />
+    <Build Include="dbo\StoredProcedures\DepartamentoEliminar.sql" />
+    <Build Include="dbo\StoredProcedures\DepartamentoInsertar.sql" />
   </ItemGroup>
 </Project>
