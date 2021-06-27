@@ -8,7 +8,16 @@ using System.Threading.Tasks;
 
 namespace WBL
 {
-    public class DepartamentoServices
+    public interface IDepartamentoServices
+    {
+        Task<DBEntity> Create(DepartamentoEntity entity);
+        Task<DBEntity> Delete(DepartamentoEntity entity);
+        Task<IEnumerable<DepartamentoEntity>> Get();
+        Task<DepartamentoEntity> GetById(DepartamentoEntity entity);
+        Task<DBEntity> Update(DepartamentoEntity entity);
+    }
+
+    public class DepartamentoServices : IDepartamentoServices
     {
         private readonly IDataAcces sql;//genera la propiedad de tipo privada al darle CLT. en _sql
 
@@ -54,25 +63,25 @@ namespace WBL
             }
 
         }
-            public async Task<DBEntity> Create(DepartamentoEntity entity)//DBEntity maneja las excepciones de errores, Create inserta datos
+        public async Task<DBEntity> Create(DepartamentoEntity entity)//DBEntity maneja las excepciones de errores, Create inserta datos
+        {
+            try
             {
-                try
+                var result = sql.ExecuteAsync("DepartamentoInsertar", new //ExecuteAsync Es un metodo del DataAcces
                 {
-                    var result = sql.ExecuteAsync("DepartamentoInsertar", new //ExecuteAsync Es un metodo del DataAcces
-                    {
-                        entity.Descripcion,
-                        entity.Ubicacion,
-                        entity.Estado
-                    });
+                    entity.Descripcion,
+                    entity.Ubicacion,
+                    entity.Estado
+                });
 
-                    return await result;
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-
+                return await result;
             }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
 
         public async Task<DBEntity> Update(DepartamentoEntity entity)//DBEntity maneja las excepciones de errores
         {
