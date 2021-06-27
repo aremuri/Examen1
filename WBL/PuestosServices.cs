@@ -26,6 +26,8 @@ namespace WBL
             sql = _sql;
         }
 
+        //Metodos asyncronicos con tareas
+
         public async Task<IEnumerable<PuestosEntity>> Get()  //IEnumerable representa las listas
         {
             try

@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="/" />
     <title>@ViewData["Title"] - WebApp</title>
-    @await Html.PartialAsync("_HeaderPartial") 
-   
+    @await Html.PartialAsync("_HeaderPartial")
+
 </head>
+
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:black">
         <div class="container-fluid">
@@ -41,7 +43,6 @@
                             <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
 
                         </ul>
-                        </>
                     </div>
                 </div>
             </div>
@@ -54,11 +55,7 @@
 
 
 
-
-
-
     @RenderBody()
-
 
     @await Html.PartialAsync("_ScriptsPartial")
     @await RenderSectionAsync("Scripts", required: false)
