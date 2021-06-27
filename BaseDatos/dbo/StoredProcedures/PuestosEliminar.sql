@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[PuestoEliminar]
+﻿CREATE PROCEDURE [dbo].[PuestosEliminar]
 @Id_Puesto INT
 AS
 	BEGIN

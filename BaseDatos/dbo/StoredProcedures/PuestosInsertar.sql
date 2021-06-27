@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[PuestoInsertar]
+﻿CREATE PROCEDURE [dbo].[PuestosInsertar]
 @Nombre VARCHAR(250),  @Salario INT, @Estado BIT
 AS
 	BEGIN
